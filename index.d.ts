@@ -34,12 +34,40 @@ export interface TogglePopups {
   method: "togglePopups";
 }
 
+export interface Init {
+  method: "init";
+}
+
+export interface GetDID {
+  method: "getDID";
+}
+
+export interface GetMethod {
+  method: "getMethod";
+}
+
+export interface GetAvailableMethods {
+  method: "getAvailableMethods";
+}
+
+export interface SwitchMethod {
+  method: "switchMethod";
+  params: {
+    didMethod: string;
+  };
+}
+
 export type MetaMaskSSISnapRPCRequest =
   | GetVCs
   | SaveVC
   | GetVP
   | ChangeInfuraToken
-  | TogglePopups;
+  | TogglePopups
+  | Init
+  | GetDID
+  | GetMethod
+  | GetAvailableMethods
+  | SwitchMethod;
 
 type Method = MetaMaskSSISnapRPCRequest["method"];
 
@@ -77,6 +105,11 @@ export interface SSISnapApi {
   ): Promise<VerifiablePresentation>;
   changeInfuraToken(infuraToken: string): Promise<boolean>;
   togglePopups(): Promise<boolean>;
+  init(): Promise<boolean>;
+  getDID(): Promise<string>;
+  getMethod(): Promise<string>;
+  getAvailableMethods(): Promise<string[]>;
+  switchMethod(didMethod: string): Promise<boolean>;
 }
 
 export interface VCQuerry {

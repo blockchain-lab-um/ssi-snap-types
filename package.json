@@ -1,8 +1,8 @@
 {
   "name": "@blockchain-lab-um/ssi-snap-types",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "types": "./index.d.ts",
-  "license": "ISC",
+  "license": "MIT",
   "author": {
     "name": "Blockchain Lab:UM",
     "email": "blockchain-lab@um.si",
