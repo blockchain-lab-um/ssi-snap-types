@@ -3,7 +3,7 @@ import { VerifiableCredential, VerifiablePresentation } from "@veramo/core";
 export interface GetVCs {
   method: "getVCs";
   params: {
-    querry?: VCQuery;
+    query?: VCQuery;
   };
 }
 
