@@ -96,7 +96,7 @@ export type Callback<T> = (arg: T) => void;
 export interface SSISnapEventApi {}
 
 export interface SSISnapApi {
-  getVCs(querry?: VCQuery): Promise<VerifiableCredential[]>;
+  getVCs(query?: VCQuery): Promise<VerifiableCredential[]>;
   saveVC(verifiableCredential: VerifiableCredential): Promise<boolean>;
   getVP(
     vc_id: string,
