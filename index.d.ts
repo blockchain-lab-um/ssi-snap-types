@@ -3,7 +3,7 @@ import { VerifiableCredential, VerifiablePresentation } from "@veramo/core";
 export interface GetVCs {
   method: "getVCs";
   params: {
-    querry?: VCQuerry;
+    querry?: VCQuery;
   };
 }
 
@@ -96,7 +96,7 @@ export type Callback<T> = (arg: T) => void;
 export interface SSISnapEventApi {}
 
 export interface SSISnapApi {
-  getVCs(querry?: VCQuerry): Promise<VerifiableCredential[]>;
+  getVCs(querry?: VCQuery): Promise<VerifiableCredential[]>;
   saveVC(verifiableCredential: VerifiableCredential): Promise<boolean>;
   getVP(
     vc_id: string,
@@ -112,6 +112,6 @@ export interface SSISnapApi {
   switchMethod(didMethod: string): Promise<boolean>;
 }
 
-export interface VCQuerry {
+export interface VCQuery {
   [key: string]: string;
 }
