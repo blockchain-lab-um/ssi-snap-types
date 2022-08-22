@@ -57,6 +57,21 @@ export interface SwitchMethod {
   };
 }
 
+export interface GetVCStore {
+  method: "getVCStore";
+}
+
+export interface SetVCStore {
+  method: "setVCStore";
+  params: {
+    vcStore: string;
+  };
+}
+
+export interface GetAvailableVCStores {
+  method: "getAvailableVCStores";
+}
+
 export type MetaMaskSSISnapRPCRequest =
   | GetVCs
   | SaveVC
@@ -67,7 +82,10 @@ export type MetaMaskSSISnapRPCRequest =
   | GetDID
   | GetMethod
   | GetAvailableMethods
-  | SwitchMethod;
+  | SwitchMethod
+  | GetVCStore
+  | SetVCStore
+  | GetAvailableVCStores;
 
 type Method = MetaMaskSSISnapRPCRequest["method"];
 
@@ -110,6 +128,9 @@ export interface SSISnapApi {
   getMethod(): Promise<string>;
   getAvailableMethods(): Promise<string[]>;
   switchMethod(didMethod: string): Promise<boolean>;
+  getVCStore(): Promise<string>;
+  setVCStore(vcStore: string): Promise<boolean>;
+  getAvailableVCStores(): Promise<string[]>;
 }
 
 export interface VCQuery {
