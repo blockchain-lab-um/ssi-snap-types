@@ -17,7 +17,7 @@ export interface SaveVC {
 export interface GetVP {
   method: "getVP";
   params: {
-    vc_id: string;
+    vcId: string;
     domain?: string;
     challenge?: string;
   };
@@ -112,7 +112,7 @@ export interface SSISnapApi {
   getVCs(query?: VCQuery): Promise<VerifiableCredential[]>;
   saveVC(verifiableCredential: VerifiableCredential): Promise<boolean>;
   getVP(
-    vc_id: string,
+    vcId: string,
     domain?: string,
     challenge?: string
   ): Promise<VerifiablePresentation>;
