@@ -34,10 +34,6 @@ export interface TogglePopups {
   method: "togglePopups";
 }
 
-export interface Init {
-  method: "init";
-}
-
 export interface GetDID {
   method: "getDID";
 }
@@ -78,7 +74,6 @@ export type MetaMaskSSISnapRPCRequest =
   | GetVP
   | ChangeInfuraToken
   | TogglePopups
-  | Init
   | GetDID
   | GetMethod
   | GetAvailableMethods
@@ -123,7 +118,6 @@ export interface SSISnapApi {
   ): Promise<VerifiablePresentation>;
   changeInfuraToken(infuraToken: string): Promise<boolean>;
   togglePopups(): Promise<boolean>;
-  init(): Promise<boolean>;
   getDID(): Promise<string>;
   getMethod(): Promise<string>;
   getAvailableMethods(): Promise<string[]>;
